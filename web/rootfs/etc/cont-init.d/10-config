@@ -17,6 +17,7 @@ if [[ $DISABLE_HTTPS -ne 1 ]]; then
                   --preferred-challenges http \
                   -d $LETSENCRYPT_DOMAIN \
                   --agree-tos \
+                  -http-01-port ${HTTP_PORT} \
                   --email $LETSENCRYPT_EMAIL ; then
 
                 echo "Failed to obtain a certificate from the Let's Encrypt CA."
